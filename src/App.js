@@ -4,7 +4,7 @@ function App(props) {
   const singleList = ["Chim", "Chó", "Mèo", "Chuột", "Lợn" ,"Gà" , "Vịt" ];
   return (
     <div className="App">
-      <Selector {...props} list = {singleList}/>
+      <Selector {...props} status = {true}  list = {singleList}/>
     </div>
   );
 }

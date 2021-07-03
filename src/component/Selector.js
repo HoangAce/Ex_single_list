@@ -5,13 +5,13 @@ class Selector extends React.Component {
     this.state = {
       list: props.list,
       values: "",
-      status: true,
+      status: props.status,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
-  handleSubmit(eventSubmit) {
+  handleSubmit() {
       alert(this.state.values);
   }
   handleChange(eventChange) {
@@ -37,7 +37,7 @@ class Selector extends React.Component {
     return (
       <div>
         <div>
-          <input value={this.state.values}></input>
+          <input type="text" value={this.state.values} onChange={this.handleChange}></input>
           <button type="submit" onClick = {this.handleSubmit}>Submit</button>
         </div>
         <div>
@@ -47,7 +47,6 @@ class Selector extends React.Component {
         </div>
         
         <select
-          autoFocus={true}
           multiple={!this.state.status}
           onChange={this.handleChange}
         >
